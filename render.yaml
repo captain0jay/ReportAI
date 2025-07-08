@@ -1,0 +1,50 @@
+# render.yaml
+services:
+  - type: web
+    plan: free
+    name: fastapi-backend
+    runtime: docker
+    repo: https://github.com/captain0jay/ReportAI.git
+    rootDir: ./
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: SELF_PORT
+        sync: 8000
+      - key: REDIS_HOST
+        sync: false
+      - key: REDIS_PORT
+        value: 6379
+      - key: REDIS_DB
+        value: 0
+      - key: PG_DB_URL
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: LLM_MODEL
+        value: gemini/gemini-2.0-flash
+      - key: LLM_TEMPERATURE
+        value: 0.7
+
+  - type: worker
+    name: background-processor
+    runtime: docker
+    repo: https://github.com/captain0jay/ReportAI.git
+    rootDir: ./
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: SELF_PORT
+        value: 8000
+      - key: REDIS_HOST
+        sync: false
+      - key: REDIS_PORT
+        value: 6379
+      - key: REDIS_DB
+        value: 0
+      - key: PG_DB_URL
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: LLM_MODEL
+        value: gemini/gemini-2.0-flash
+      - key: LLM_TEMPERATURE
+        value: 0.7

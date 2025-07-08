@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  processor:
+    build: .
+    container_name: processor
+    depends_on:
+      - redis
+    command: ["python", "processor.py"]
+    volumes:
+      - .:/app
+    environment:
+      - REDIS_HOST=redis
+
+  server:
+    build: .
+    container_name: fastapi-server
+    depends_on:
+      - redis
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - REDIS_HOST=redis
