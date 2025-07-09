@@ -12,4 +12,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Default command is overridden by docker-compose
-CMD ["echo", "Use docker-compose to run"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
