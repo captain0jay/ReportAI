@@ -1,8 +1,8 @@
 import time
 from DB.redis import RedisQueue
-from main import run_crew
 from DB.pg import DBManager
 import asyncio
+from crew import run_crew
 
 async def process_task(task):
     try:

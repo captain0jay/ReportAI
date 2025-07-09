@@ -21,16 +21,6 @@ SELF_URL = os.environ.get('SELF_URL', 'http://localhost:8000')
 
 app = FastAPI(title="Blood Test Report Analyser")
 
-async def run_crew(query: str, fileContent: str="Some content"):
-    """To run the whole crew"""
-    medical_crew = Crew(
-        agents=[doctor],
-        tasks=[help_patients],
-        process=Process.sequential,
-    )
-    result = medical_crew.kickoff({'query': query, 'fileData': fileContent })
-    return result
-
 @app.get("/")
 async def root():
     """Health check endpoint"""
