@@ -18,8 +18,6 @@ from processor import main as processor_main
 templates = Jinja2Templates(directory="templates")
 POST_DIR = "posts"
 SELF_URL = os.environ.get('SELF_URL', 'http://localhost:8000')
-port = int(os.environ.get("PORT", 8000))
-
 app = FastAPI(title="Blood Test Report Analyser")
 
 @app.get("/")
@@ -106,6 +104,7 @@ async def start_background_processor():
     print("Starting background processor...")
     asyncio.create_task(processor_main())
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=port)
+# if __name__ == "__main__":
+#     import uvicorn
+#     port = int(os.environ.get("PORT", 8000))
+#     uvicorn.run(app, host="0.0.0.0", port=port)
