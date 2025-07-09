@@ -21,6 +21,6 @@ async def main():
         if task:
             await process_task(task)
 
-if __name__ == '__main__':
-    print("Processor running...")
-    asyncio.run(main())
+# if __name__ == '__main__':
+#     print("Processor running...")
+#     asyncio.run(main())
