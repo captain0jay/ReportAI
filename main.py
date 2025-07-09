@@ -102,8 +102,9 @@ async def read_blog(request: Request, slug: str):
 
 @app.on_event("startup")
 async def start_background_processor():
-    print("Starting background processor...")
-    asyncio.create_task(processor_main())
+    print("Starting background processor in background thread...")
+    loop = asyncio.get_event_loop()
+    loop.run_in_executor(None, processor_main)
 
 if __name__ == "__main__":
     import uvicorn
