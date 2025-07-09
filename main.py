@@ -19,6 +19,7 @@ templates = Jinja2Templates(directory="templates")
 POST_DIR = "posts"
 SELF_URL = os.environ.get('SELF_URL', 'http://localhost:8000')
 app = FastAPI(title="Blood Test Report Analyser")
+port = int(os.environ.get("PORT", 8000))
 
 @app.get("/")
 async def root():
