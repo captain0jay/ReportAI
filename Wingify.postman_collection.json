@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "59495c7f-b11b-4338-8c2a-d38e6376ec2b",
+		"name": "Wingify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34106873",
+		"_collection_link": "https://lively-water-383834.postman.co/workspace/Bitespeed~1a453923-f434-4745-a85a-b14dc2d362be/collection/34106873-59495c7f-b11b-4338-8c2a-d38e6376ec2b?action=share&source=collection_link&creator=34106873"
+	},
+	"item": [
+		{
+			"name": "New request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "c:\\Users\\capta\\Downloads\\bloodreport.pdf"
+						},
+						{
+							"key": "query",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://reportai-o8em.onrender.com/analyze",
+					"protocol": "https",
+					"host": [
+						"reportai-o8em",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"analyze"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New request Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "c:\\Users\\capta\\Downloads\\bloodreport.pdf"
+						},
+						{
+							"key": "query",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/analyze",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"analyze"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
