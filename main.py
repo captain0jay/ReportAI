@@ -12,8 +12,6 @@ from fastapi.templating import Jinja2Templates
 import markdown
 from DB.redis import RedisQueue as cache
 from DB.pg import DBManager
-import asyncio
-from processor import main as processor_main
 
 templates = Jinja2Templates(directory="templates")
 POST_DIR = "posts"
@@ -100,13 +98,7 @@ async def read_blog(request: Request, slug: str):
         "loading": loadingState
     })
 
-# @app.on_event("startup")
-# async def start_background_processor():
-#     print("Starting background processor...")
-#     asyncio.create_task(processor_main())
-
 if __name__ == "__main__":
     import uvicorn
     port = int(os.environ.get("PORT", 8000))
-    asyncio.create_task(processor_main())
     uvicorn.run(app, host="0.0.0.0", port=port)
