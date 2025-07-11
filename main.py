@@ -12,6 +12,7 @@ from fastapi.templating import Jinja2Templates
 import markdown
 from DB.redis import RedisQueue as cache
 from DB.pg import DBManager
+from processor import process_task
 
 templates = Jinja2Templates(directory="templates")
 POST_DIR = "posts"
@@ -52,8 +53,8 @@ async def analyze_blood_report(
         q = cache('reports')
         fileContent = await BloodTestReportTool.read_data_tool(file_path)
 
-        q.enqueue({ 'slug': file_id, 'query': query.strip(), 'fileContent': fileContent })
-
+        # q.enqueue({ 'slug': file_id, 'query': query.strip(), 'fileContent': fileContent })
+        await process_task({ 'slug': file_id, 'query': query.strip(), 'fileContent': fileContent })
         return {
             "status": "success",
             "file_processing": file.filename,
