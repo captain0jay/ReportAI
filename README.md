@@ -110,7 +110,7 @@ Set these environment variables before running the application:
 
 ## 🧭 Flow Diagram
 
-![Blood Report AI Flow](./assets/flow-diagram.png)
+![Blood Report AI Flow](./BloodReportFlowDesign.svg)
 
 > *Above: End-to-end system overview — from PDF upload, to Redis queue, to LLM analysis, to PostgreSQL, and final blog rendering.*
 
@@ -118,7 +118,13 @@ Set these environment variables before running the application:
 
 ## 🧑‍💻 Host It Yourself
 
-Want to self-host? Clone the repo and set the environment variables. You’ll need:
+Want to self-host?
+ 
+1. Easy one-click deploy on render
+   
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/captain0jay/ReportAI)
+
+2. Clone the repo and set the environment variables. You’ll need:
 
 * Python 3.10+
 * Redis
