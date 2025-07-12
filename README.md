@@ -15,6 +15,44 @@ The **Blood Report AI Agent** is a scalable and fast AI-powered assistant that a
 
 ---
 
+## 🧪 Test
+
+You can test the Blood Report AI Agent by making a **POST request** to the following endpoint:
+
+```
+
+https://reportai-o8em.onrender.com/analyze
+
+````
+
+### 🔧 Required Form Data
+
+| Field Name | Type   | Description                            |
+|------------|--------|----------------------------------------|
+| `file`     | File   | The blood report PDF to be analyzed    |
+| `query`    | String | Any natural language question or prompt related to the report |
+
+### 📬 Example Using `curl`
+
+```bash
+curl -X POST https://reportai-o8em.onrender.com/analyze \
+  -F "file=@your_blood_report.pdf" \
+  -F "query=Summarize the key abnormalities"
+````
+
+### 🧪 Postman Collection
+A Postman collection file is included in this repository (BloodReportAI_Test.postman_collection.json) for your convenience.
+You can import it into Postman and run pre-configured tests instantly.
+
+vbnet
+Copy
+Edit
+
+### ✅ Expected Output
+
+You will receive a JSON response containing an AI-generated blog-style analysis or an interim "loading" message if the processing is ongoing.
+
+
 ## 📦 Installation
 
 ```bash
