@@ -52,6 +52,9 @@ Edit
 
 You will receive a JSON response containing an AI-generated blog-style analysis or an interim "loading" message if the processing is ongoing.
 
+### Demo Video
+
+https://www.loom.com/share/3bb3997fae48434bbada0aacf9b6edbf?sid=50ed2ad7-ecd4-4c85-a6e6-ae97362a1e29
 
 ## 📦 Installation
 
