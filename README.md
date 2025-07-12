@@ -1,3 +1,5 @@
+Alert : Due to the Deployment constraint of render Redis queueing is not working when you will test the URL provided and so you will get the blogs after a certain amount of time and not instataneously but running locally or self-hosting will solve this issue for you
+
 # 🧬 Blood Report AI Agent
 
 The **Blood Report AI Agent** is a scalable and fast AI-powered assistant that analyzes uploaded blood report PDFs and presents the findings in a user-friendly blog format. It uses an LLM backend, Redis for job queuing, and PostgreSQL for structured storage.
