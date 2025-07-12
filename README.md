@@ -1,8 +1,3 @@
-Here’s a `README.md` for your **Blood Report AI Agent** project in Markdown format:
-
----
-
-````markdown
 # 🧬 Blood Report AI Agent
 
 The **Blood Report AI Agent** is a scalable and fast AI-powered assistant that analyzes uploaded blood report PDFs and presents the findings in a user-friendly blog format. It uses an LLM backend, Redis for job queuing, and PostgreSQL for structured storage.
@@ -20,6 +15,44 @@ The **Blood Report AI Agent** is a scalable and fast AI-powered assistant that a
 
 ---
 
+## 🧪 Test
+
+You can test the Blood Report AI Agent by making a **POST request** to the following endpoint:
+
+```
+
+https://reportai-o8em.onrender.com/analyze
+
+````
+
+### 🔧 Required Form Data
+
+| Field Name | Type   | Description                            |
+|------------|--------|----------------------------------------|
+| `file`     | File   | The blood report PDF to be analyzed    |
+| `query`    | String | Any natural language question or prompt related to the report |
+
+### 📬 Example Using `curl`
+
+```bash
+curl -X POST https://reportai-o8em.onrender.com/analyze \
+  -F "file=@your_blood_report.pdf" \
+  -F "query=Summarize the key abnormalities"
+````
+
+### 🧪 Postman Collection
+A Postman collection file is included in this repository (BloodReportAI_Test.postman_collection.json) for your convenience.
+You can import it into Postman and run pre-configured tests instantly.
+
+vbnet
+Copy
+Edit
+
+### ✅ Expected Output
+
+You will receive a JSON response containing an AI-generated blog-style analysis or an interim "loading" message if the processing is ongoing.
+
+
 ## 📦 Installation
 
 ```bash
@@ -32,7 +65,7 @@ pip install -r requirements.txt
 
 There are **two apps** in this system:
 
-### 1. 🖥️ Frontend API
+### 1. 🖥️ Backend API
 
 Run using:
 
@@ -117,7 +150,3 @@ Then run the app as shown above.
 
 > Built with ❤️ to help interpret complex medical data faster and more accessibly.
 
-```
-
-Let me know if you’d like me to generate the **flow diagram image**, or add badges (e.g., build status, license) or make a web version of this README.
-```
