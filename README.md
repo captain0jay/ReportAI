@@ -43,7 +43,7 @@ curl -X POST https://reportai-o8em.onrender.com/analyze \
 ````
 
 ### 🧪 Postman Collection
-A Postman collection file is included in this repository (BloodReportAI_Test.postman_collection.json) for your convenience.
+A Postman collection file is included in this repository (Wingify.postman_collection.json) for your convenience.
 You can import it into Postman and run pre-configured tests instantly.
 
 vbnet
