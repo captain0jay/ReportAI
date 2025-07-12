@@ -1,8 +1,3 @@
-Here’s a `README.md` for your **Blood Report AI Agent** project in Markdown format:
-
----
-
-````markdown
 # 🧬 Blood Report AI Agent
 
 The **Blood Report AI Agent** is a scalable and fast AI-powered assistant that analyzes uploaded blood report PDFs and presents the findings in a user-friendly blog format. It uses an LLM backend, Redis for job queuing, and PostgreSQL for structured storage.
@@ -32,7 +27,7 @@ pip install -r requirements.txt
 
 There are **two apps** in this system:
 
-### 1. 🖥️ Frontend API
+### 1. 🖥️ Backend API
 
 Run using:
 
@@ -117,7 +112,3 @@ Then run the app as shown above.
 
 > Built with ❤️ to help interpret complex medical data faster and more accessibly.
 
-```
-
-Let me know if you’d like me to generate the **flow diagram image**, or add badges (e.g., build status, license) or make a web version of this README.
-```
