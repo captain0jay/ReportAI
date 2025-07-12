@@ -54,7 +54,11 @@ async def analyze_blood_report(
         fileContent = await BloodTestReportTool.read_data_tool(file_path)
 
         # q.enqueue({ 'slug': file_id, 'query': query.strip(), 'fileContent': fileContent })
+        # Alert : Due to the Deployment constraint of render Redis queueing is not working when you will test the URL provided 
+        # and so you will get the blogs after a certain amount of time and not instataneously but running locally or self-hosting will solve this issue for you
+        # To run locallyy comment process_task aout and uncomment the redis enqueue line 
         await process_task({ 'slug': file_id, 'query': query.strip(), 'fileContent': fileContent })
+
         return {
             "status": "success",
             "file_processing": file.filename,
